@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heroes Showcase | Marvel Universe</title>
+  <link rel="stylesheet" href="style1.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-link home">Home</a>
+    <a href="marvel.html" class="nav-link marvel active">Marvel Universe</a>
+    <a href="dc.html" class="nav-link dc">DC Universe</a>
+    <button id="audio-btn" class="audio-control">🔇 Play Theme</button>
+  </nav>
+
+  <!-- Dynamic Action Scene Background with Overlay -->
+  <div class="animated-bg"></div>
+  <div class="bg-overlay"></div>
+
+  <div class="container container-pt">
+    <header>
+      <h1
+        style="background: linear-gradient(45deg, #fff, var(--marvel-brand)); -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 0 10px rgba(237,29,36,0.3));">
+        Marvel Universe</h1>
+      <p>Earth's Mightiest Heroes and Beyond.</p>
+    </header>
+
+    <main class="grid">
+      <!-- Web Slinger -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/web_slinger.png" alt="Web Slinger" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Web Slinger</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>Spider Man</h3>
+              <p class="backstory">A young hero bitten by a radioactive spider, swinging through the city to protect the
+                innocent.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Wall-Crawling</li>
+                  <li>Superhuman Agility</li>
+                  <li>Spider-Sense</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 75%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 85%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iron Avenger -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://m.media-amazon.com/images/M/MV5BNjg4NjM1NDI0NF5BMl5BanBnXkFtZTcwMTEzNTIzMw@@._V1_.jpg"
+              alt="Iron Man" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Iron Man</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>Iron Man</h3>
+              <p class="backstory">Genius billionaire who built a high-tech armored suit to save the world from ultimate
+                destruction.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Genius-Level Intellect</li>
+                  <li>Powered Armor Suit</li>
+                  <li>Flight & Repulsors</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 85%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 100%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Avenger -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="https://www.shutterstock.com/image-photo/marvel-captain-america-white-background-600nw-2727397885.jpg"
+              alt="Captain America" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Captain America</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>First Avenger</h3>
+              <p class="backstory">A patriotic WWII soldier enhanced by a super-soldier serum, wielding an
+                indestructible shield.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Super Soldier Strength</li>
+                  <li>Master Tactician</li>
+                  <li>Vibranium Shield Mastery</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 85%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 75%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- God of Thunder -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chris_Hemsworth_as_Thor.jpg" alt="Thor"
+              class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Thor</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>Thor</h3>
+              <p class="backstory">Asgardian prince and wielder of Mjolnir, defending both Earth and the Nine Realms
+                from cosmic threats.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Lightning Manipulation</li>
+                  <li>Godlike Strength</li>
+                  <li>Mjolnir Mastery</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 98%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 65%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Black Panther -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://static.wikia.nocookie.net/marvel-dc/images/9/9f/Black_Panther_OS_Vol_1_2.png"
+              alt="Black Panther" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Black Panther</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>Black Panther</h3>
+              <p class="backstory">King of Wakanda and wielder of the Heart-Shaped Herb, protecting his nation with
+                vibranium-enhanced power.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Vibranium Suit</li>
+                  <li>Enhanced Senses</li>
+                  <li>Master Combatant</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 82%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 90%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scarlet Witch -->
+      <div class="card marvel-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://static.wikia.nocookie.net/villains/images/c/c4/Scarlet_Witch_DS.webp" alt="Scarlet Witch"
+              class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe marvel">Marvel</span>
+              <h2>Scarlet Witch</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe marvel">Marvel</span>
+              <h3>Scarlet Witch</h3>
+              <p class="backstory">The most powerful Avenger, capable of rewriting reality itself through chaos magic
+                and probability manipulation.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Chaos Magic</li>
+                  <li>Reality Warping</li>
+                  <li>Telepathy & Telekinesis</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 70%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 92%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <audio id="theme-audio" loop src="audio/marvel_theme.mp3"></audio>
+  <script>
+    const audio = document.getElementById('theme-audio');
+    const btn = document.getElementById('audio-btn');
+
+    // Attempt to play immediately on load
+    audio.play().then(() => {
+      btn.innerHTML = '🔊 Playing Theme';
+    }).catch(err => {
+      console.log('Autoplay blocked. Waiting for user interaction.');
+    });
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener('play', () => btn.innerHTML = '🔊 Playing Theme');
+    audio.addEventListener('pause', () => btn.innerHTML = '🔇 Paused Theme');
+  </script>
+</body>
+
+</html>

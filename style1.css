@@ -1,0 +1,852 @@
+:root {
+  --marvel-brand: #ED1D24;
+  --dc-brand: #0476F2;
+  --bg-color: #0d0f12;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --font-main: 'Outfit', sans-serif;
+  --font-heading: 'Orbitron', sans-serif;
+  --card-width: 320px;
+  --card-height: 480px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Dynamic Animated Background Scene */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  background: url('images/bg_avengers.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* Animate to simulate a running scene over time with pure CSS */
+  animation: dynamicRun 15s ease-in-out infinite alternate;
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(13, 15, 18, 0.7) 0%, rgba(13, 15, 18, 0.95) 100%);
+  pointer-events: none;
+}
+
+@keyframes dynamicRun {
+  0% { transform: scale(1.1) translateX(2%); }
+  50% { transform: scale(1.2) translateY(2%) translateX(-2%); }
+  100% { transform: scale(1.15) translateX(-5%); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #ffffff, #888888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+/* Card Styles */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-radius: 20px;
+}
+
+.card:hover .card-inner,
+.card:focus .card-inner {
+  transform: rotateY(180deg) translateY(-10px);
+  box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-front {
+  background: #111;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Fallback gradient styling when actual images are not available */
+.fallback-img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.iron-man-gradient {
+  background: radial-gradient(circle at center, #ffcc00 10%, #cc0000 70%, #660000 100%);
+}
+
+.wonder-woman-gradient {
+  background: linear-gradient(135deg, #0d3873 0%, #a41c2c 50%, #d4af37 100%);
+}
+
+.captain-america-gradient {
+  background: repeating-linear-gradient(45deg, #0033cc, #0033cc 20px, #ffffff 20px, #ffffff 40px, #cc0000 40px, #cc0000 60px);
+}
+
+.thor-gradient {
+  background: radial-gradient(ellipse at top, #c9a227 0%, #3a5fa0 50%, #1a1a3e 100%);
+}
+
+.black-panther-gradient {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 40%, #4b0082 80%, #7b2d8b 100%);
+}
+
+.scarlet-witch-gradient {
+  background: radial-gradient(circle at 30% 30%, #ff2d55 0%, #8b0000 50%, #2d0033 100%);
+}
+
+.flash-gradient {
+  background: linear-gradient(135deg, #cc0000 0%, #ff4500 40%, #ffd700 80%, #ffec3d 100%);
+}
+
+.aquaman-gradient {
+  background: linear-gradient(160deg, #004e8c 0%, #0099cc 40%, #00c9a7 75%, #00e5cc 100%);
+}
+
+.green-lantern-gradient {
+  background: radial-gradient(circle at center, #00ff88 0%, #00b34a 40%, #003d1f 100%);
+}
+
+.card:hover .hero-img,
+.card:focus .hero-img,
+.card:hover .fallback-img,
+.card:focus .fallback-img {
+  transform: scale(1.1);
+}
+
+.front-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 60%);
+}
+
+.front-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  text-align: left;
+}
+
+.universe {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  align-self: flex-start;
+}
+
+.dc-theme .universe {
+  background: var(--dc-brand);
+  color: white;
+}
+
+.marvel-theme .universe {
+  background: var(--marvel-brand);
+  color: white;
+}
+
+.front-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Card Back */
+.card-back {
+  background: rgba(15, 15, 20, 0.95);
+  transform: rotateY(180deg);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.back-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.dc-theme .card-back h3 { color: var(--dc-brand); }
+.marvel-theme .card-back h3 { color: var(--marvel-brand); }
+
+.backstory {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.powers {
+  margin-bottom: 1.5rem;
+}
+
+.powers h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.3rem;
+}
+
+.powers ul {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.powers li {
+  margin-bottom: 0.3rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.powers li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+.dc-theme .powers li::before { color: var(--dc-brand); }
+.marvel-theme .powers li::before { color: var(--marvel-brand); }
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stat-row span {
+  width: 80px;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.1, 0.8, 0.3, 1) 0.3s;
+}
+
+.card:hover .progress,
+.card:focus .progress {
+  width: var(--target-width, 0%);
+}
+
+.dc-theme .progress { background: var(--dc-brand); box-shadow: 0 0 10px var(--dc-brand); }
+.marvel-theme .progress { background: var(--marvel-brand); box-shadow: 0 0 10px var(--marvel-brand); }
+
+/* =====================================================
+   DYNAMICS — Animations & Enhanced Interactions
+   ===================================================== */
+
+/* 1. STAGGERED CARD ENTRANCE (fade + slide up) */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card entrance + float are now merged via CSS custom properties below */
+
+/* 2. INFINITE LEVITATION FLOAT */
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 30px 20px rgba(0,0,0,0.45));
+  }
+  25% {
+    transform: translateY(-10px) rotate(0.4deg);
+    filter: drop-shadow(0 45px 30px rgba(0,0,0,0.25));
+  }
+  50% {
+    transform: translateY(-14px) rotate(0deg);
+    filter: drop-shadow(0 50px 35px rgba(0,0,0,0.2));
+  }
+  75% {
+    transform: translateY(-10px) rotate(-0.4deg);
+    filter: drop-shadow(0 45px 30px rgba(0,0,0,0.25));
+  }
+}
+
+/* Float plays on the outer card, so it never conflicts with the inner flip */
+.card {
+  animation: cardEntrance 0.6s cubic-bezier(0.22, 1, 0.36, 1) both,
+             floatCard 4s ease-in-out infinite;
+  animation-delay: var(--entrance-delay, 0s), var(--float-delay, 0s);
+}
+
+/* Unique float phase per card so they all bob independently */
+.card:nth-child(1)  { --entrance-delay: 0.05s; --float-delay: 0.0s; }
+.card:nth-child(2)  { --entrance-delay: 0.12s; --float-delay: 0.6s; }
+.card:nth-child(3)  { --entrance-delay: 0.19s; --float-delay: 1.2s; }
+.card:nth-child(4)  { --entrance-delay: 0.26s; --float-delay: 1.8s; }
+.card:nth-child(5)  { --entrance-delay: 0.33s; --float-delay: 0.4s; }
+.card:nth-child(6)  { --entrance-delay: 0.40s; --float-delay: 1.0s; }
+.card:nth-child(7)  { --entrance-delay: 0.47s; --float-delay: 1.6s; }
+.card:nth-child(8)  { --entrance-delay: 0.54s; --float-delay: 0.2s; }
+.card:nth-child(9)  { --entrance-delay: 0.61s; --float-delay: 0.8s; }
+.card:nth-child(10) { --entrance-delay: 0.68s; --float-delay: 1.4s; }
+.card:nth-child(11) { --entrance-delay: 0.75s; --float-delay: 2.0s; }
+.card:nth-child(12) { --entrance-delay: 0.82s; --float-delay: 0.3s; }
+
+/* 3. GLOWING BORDER ON HOVER */
+.dc-theme .card-inner {
+  border: 1.5px solid transparent;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.marvel-theme .card-inner {
+  border: 1.5px solid transparent;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.dc-theme:hover .card-inner,
+.dc-theme:focus .card-inner {
+  border-color: var(--dc-brand);
+  box-shadow: 0 0 20px rgba(4, 118, 242, 0.5),
+              0 0 50px rgba(4, 118, 242, 0.2),
+              0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
+.marvel-theme:hover .card-inner,
+.marvel-theme:focus .card-inner {
+  border-color: var(--marvel-brand);
+  box-shadow: 0 0 20px rgba(237, 29, 36, 0.5),
+              0 0 50px rgba(237, 29, 36, 0.2),
+              0 30px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* 4. SHIMMER SWEEP ON CARD FRONT */
+.card-front::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 60%
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.card:hover .card-front::after,
+.card:focus .card-front::after {
+  left: 160%;
+}
+
+/* 5. PULSING GLOW ON UNIVERSE BADGE */
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 6px var(--badge-glow); }
+  50%       { box-shadow: 0 0 18px var(--badge-glow), 0 0 30px var(--badge-glow); }
+}
+
+.universe {
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+.dc-theme .universe {
+  --badge-glow: var(--dc-brand);
+}
+
+.marvel-theme .universe {
+  --badge-glow: var(--marvel-brand);
+}
+
+/* 6. ANIMATED SHIMMER ON HEADER TITLE */
+@keyframes titleShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+h1 {
+  background: linear-gradient(90deg,
+    #888888 0%,
+    #ffffff 30%,
+    #cccccc 50%,
+    #ffffff 70%,
+    #888888 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: titleShimmer 4s linear infinite;
+}
+
+/* 7. POWER LIST ITEMS — STAGGER REVEAL ON FLIP */
+@keyframes powerReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card:hover .powers li,
+.card:focus .powers li {
+  animation: powerReveal 0.4s ease both;
+}
+.card:hover .powers li:nth-child(1),
+.card:focus .powers li:nth-child(1) { animation-delay: 0.45s; }
+.card:hover .powers li:nth-child(2),
+.card:focus .powers li:nth-child(2) { animation-delay: 0.55s; }
+.card:hover .powers li:nth-child(3),
+.card:focus .powers li:nth-child(3) { animation-delay: 0.65s; }
+
+/* 8. ANIMATED PROGRESS BAR SHIMMER */
+@keyframes progressShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.card:hover .progress,
+.card:focus .progress {
+  background-image: linear-gradient(
+    90deg,
+    currentColor 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  animation: progressShimmer 1.5s linear infinite 1s;
+}
+
+/* 9. HEADER SUBTITLE FADE IN */
+@keyframes subtitleFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+header p {
+  animation: subtitleFade 1s ease 0.3s both;
+}
+
+/* 10. CARD BACK — SUBTLE SCAN LINE TEXTURE */
+.card-back::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+/* 11. FALLBACK GRADIENT SUBTLE ANIMATED BREATHE */
+@keyframes gradientPulse {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50%       { filter: brightness(1.15) saturate(1.2); }
+}
+
+.fallback-img {
+  animation: gradientPulse 3s ease-in-out infinite;
+}
+
+.card:hover .fallback-img,
+.card:focus .fallback-img {
+  animation-play-state: paused;
+}
+
+/* 12. HEADING FONTS & GLOW EFFECTS */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+@keyframes h1DropGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
+  50%      { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)); }
+}
+
+@keyframes textGlowPulse {
+  0%, 100% { text-shadow: 0 0 5px currentColor; }
+  50%      { text-shadow: 0 0 12px currentColor, 0 0 20px currentColor; }
+}
+
+h1 {
+  /* We use drop-shadow here so it glows the transparent text edges properly */
+  animation: titleShimmer 4s linear infinite, h1DropGlow 3s ease-in-out infinite;
+}
+
+h2, h3 {
+  /* Standard text-shadow pulse for the card headers */
+  animation: textGlowPulse 2.5s ease-in-out infinite;
+}
+
+/* =====================================================
+   NAVIGATION BAR
+   ===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem 2rem;
+  background: rgba(13, 15, 18, 0.4);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 100;
+  font-family: var(--font-heading);
+}
+
+.audio-control {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  outline: none;
+  position: absolute;
+  right: 2rem;
+}
+.audio-control:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px white;
+}
+
+.nav-link.marvel:hover::after, .nav-link.marvel.active::after {
+  width: 100%;
+  background: var(--marvel-brand);
+  box-shadow: 0 0 15px var(--marvel-brand);
+}
+
+.nav-link.dc:hover::after, .nav-link.dc.active::after {
+  width: 100%;
+  background: var(--dc-brand);
+  box-shadow: 0 0 15px var(--dc-brand);
+}
+
+.nav-link.home:hover::after, .nav-link.home.active::after {
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px white;
+}
+
+/* Page padding to ensure navbar doesn't cover top titles */
+body {
+  padding-top: 5rem;
+}
+
+/* =====================================================
+   INTRO SECTION (Homepage)
+   ===================================================== */
+.intro-section {
+  max-width: 900px;
+  margin: 2rem auto 4rem auto;
+  text-align: center;
+  padding: 3rem;
+  background: rgba(13, 15, 18, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  animation: cardEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.intro-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.intro-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-family: var(--font-main);
+  font-weight: 300;
+}
+
+.intro-quote {
+  font-style: italic;
+  font-size: 1.4rem;
+  border-left: 4px solid #fff;
+  padding-left: 1.5rem;
+  margin: 2.5rem 0;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+/* =====================================================
+   PREMIUM ENHANCEMENTS — Atmosphere & Polish
+   ===================================================== */
+
+/* 1. Custom Scrollbar spanning both universes */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-left: 1px solid rgba(255,255,255,0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--marvel-brand), var(--dc-brand));
+  border-radius: 6px;
+  border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff4c4c, #3a9cff);
+}
+
+/* 2. Custom Text Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+}
+
+/* 3. Massive Ambient Background Light Orbs */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(180px); /* Massive blur for smooth gradient light */
+  z-index: -2;
+  opacity: 0.45;
+  pointer-events: none;
+  animation: atmosphericDrift 25s ease-in-out infinite alternate;
+}
+
+body::before {
+  width: 700px;
+  height: 700px;
+  background: var(--marvel-brand);
+  top: -200px;
+  left: -200px;
+}
+
+body::after {
+  width: 600px;
+  height: 600px;
+  background: var(--dc-brand);
+  bottom: -200px;
+  right: -100px;
+  animation-delay: -12s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes atmosphericDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(300px, 150px) scale(1.2); }
+}
+
+/* 4. Enhanced Nav Link Glowing Text (Re-Targeting existing class) */
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* 5. Sci-Fi Corner Brackets for the Homepage Intro */
+.intro-section {
+  position: relative;
+}
+.intro-section::before, .intro-section::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 3px solid transparent;
+  pointer-events: none;
+}
+.intro-section::before {
+  top: -3px; left: -3px;
+  border-top-color: var(--marvel-brand);
+  border-left-color: var(--marvel-brand);
+  border-radius: 20px 0 0 0;
+  box-shadow: -5px -5px 15px rgba(237, 29, 36, 0.4);
+}
+.intro-section::after {
+  bottom: -3px; right: -3px;
+  border-bottom-color: var(--dc-brand);
+  border-right-color: var(--dc-brand);
+  border-radius: 0 0 20px 0;
+  box-shadow: 5px 5px 15px rgba(4, 118, 242, 0.4);
+}

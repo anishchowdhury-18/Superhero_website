@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heroes Showcase | DC Universe</title>
+  <link rel="stylesheet" href="style1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-link home">Home</a>
+    <a href="marvel.html" class="nav-link marvel">Marvel Universe</a>
+    <a href="dc.html" class="nav-link dc active">DC Universe</a>
+    <button id="audio-btn" class="audio-control">🔇 Play Theme</button>
+  </nav>
+
+  <!-- Dynamic Action Scene Background with Overlay -->
+  <div class="animated-bg"></div>
+  <div class="bg-overlay"></div>
+
+  <div class="container container-pt">
+    <header>
+      <h1 style="background: linear-gradient(45deg, #fff, var(--dc-brand)); -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 0 10px rgba(4,118,242,0.3));">DC Universe</h1>
+      <p>Gods Among Men.</p>
+    </header>
+
+    <main class="grid">
+      <!-- Dark Knight -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/dark_knight.png" alt="Dark Knight" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Dark Knight</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Dark Knight</h3>
+              <p class="backstory">Billionaire vigilante fighting crime with intellect, martial arts, and advanced technology in the shadows.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Genius Intellect</li>
+                  <li>Master Martial Artist</li>
+                  <li>Advanced Gadgetry</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 40%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 98%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 35%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Man of Steel -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/man_of_steel.png" alt="Man of Steel" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Man of Steel</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Man of Steel</h3>
+              <p class="backstory">The last son of Krypton, drawing immense power from the yellow sun to protect his adopted home.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Super Strength & Flight</li>
+                  <li>Heat Vision</li>
+                  <li>Invulnerability</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 100%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 70%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 95%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Warrior Princess -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://static.wikia.nocookie.net/p__/images/8/8e/WonderWomanVC.webp/revision/latest?cb=20240720230522&path-prefix=protagonist" alt="Wonder Woman" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Wonder Woman</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Warrior Princess</h3>
+              <p class="backstory">Amazonian princess and founding member of the Justice League, fierce champion of worldwide peace.</p>
+
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Super Strength</li>
+                  <li>Lasso of Truth</li>
+                  <li>Indestructible Bracelets</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 98%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 85%"></div>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="--target-width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speed Force -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://cdn.europosters.eu/image/1300/173546.jpg" alt="Flash" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Flash</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Flash</h3>
+              <p class="backstory">The Fastest Man Alive, connected to the Speed Force, capable of outrunning time itself to protect Central City.</p>
+              
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Superhuman Speed</li>
+                  <li>Time Travel</li>
+                  <li>Lightning Aura</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 60%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 80%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 100%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- King of Atlantis -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://multiversus.wiki.gg/images/thumb/Aquaman.png/765px-Aquaman.png?b182a8" alt="Aquaman" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Aquaman</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Aquaman</h3>
+              <p class="backstory">Half-human, half-Atlantean ruler of the seas, commanding the ocean's creatures and wielding the legendary Trident of Poseidon.</p>
+              
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Aquatic Telepathy</li>
+                  <li>Trident of Poseidon</li>
+                  <li>Superhuman Durability</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 95%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 72%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 78%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emerald Guardian -->
+      <div class="card dc-theme" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://www.superherotoystore.com/cdn/shop/articles/Lantern_by_Fabok_600x.jpg?v=1466417010" alt="Green Lantern" class="hero-img">
+            <div class="front-overlay"></div>
+            <div class="front-content">
+              <span class="universe dc">DC</span>
+              <h2>Green lantern</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <span class="universe dc">DC</span>
+              <h3>Green Lantern</h3>
+              <p class="backstory">An intergalactic police officer wielding a power ring fueled by willpower, creating any construct imaginable from pure green energy.</p>
+              
+              <div class="powers">
+                <h4>Powers & Abilities</h4>
+                <ul>
+                  <li>Power Ring Constructs</li>
+                  <li>Interstellar Flight</li>
+                  <li>Force Fields</li>
+                </ul>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Strength</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 88%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Intel</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 83%"></div></div>
+                </div>
+                <div class="stat-row">
+                  <span>Speed</span>
+                  <div class="progress-bar"><div class="progress" style="--target-width: 92%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <audio id="theme-audio" loop src="audio/dc_theme.mp3"></audio>
+  <script>
+    const audio = document.getElementById('theme-audio');
+    const btn = document.getElementById('audio-btn');
+
+    // Attempt to play immediately on load
+    audio.play().then(() => {
+        btn.innerHTML = '🔊 Playing Theme';
+    }).catch(err => {
+        console.log('Autoplay blocked. Waiting for user interaction.');
+    });
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener('play', () => btn.innerHTML = '🔊 Playing Theme');
+    audio.addEventListener('pause', () => btn.innerHTML = '🔇 Paused Theme');
+  </script>
+</body>
+
+</html>
